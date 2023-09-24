@@ -17,9 +17,11 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=2304
-window/size/viewport_height=1296
+window/size/viewport_width=1088
+window/size/viewport_height=640
 window/size/mode=2
+window/size/window_width_override=363
+window/size/window_height_override=213
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -31,3 +33,4 @@ project/assembly_name="TowerDefense"
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/light_projectors/filter=0

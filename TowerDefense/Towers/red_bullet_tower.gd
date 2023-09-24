@@ -52,4 +52,8 @@ func _on_input_event(viewport, event, shape_idx):
 			if towerPath.get_child(i).name != self.name:
 				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
 		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
-		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-572,81)
+		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-95,25)
+
+
+func _on_timer_timeout():
+	pass # Replace with function body.

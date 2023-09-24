@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvrt455jp3ve6"]
+[gd_scene load_steps=14 format=3 uid="uid://dvrt455jp3ve6"]
 
 [ext_resource type="Script" path="res://Towers/red_bullet_tower.gd" id="1_owokt"]
 [ext_resource type="Texture2D" uid="uid://c0lpnk5l2meiw" path="res://Art/towerDefense_tile250.png" id="1_x8rs1"]
@@ -68,6 +68,21 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ko0dj"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ncn3i"]
+bg_color = Color(0.839216, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_depai"]
+bg_color = Color(0, 0.694118, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_qywug"]
+script/source = "extends ProgressBar
+
+
+func _process(delta):
+	self.max_value = get_node(\"Timer\").wait_time
+	self.value = get_node(\"Timer\").time_left
+"
+
 [node name="RedBulletTower" type="StaticBody2D"]
 input_pickable = true
 script = ExtResource("1_owokt")
@@ -105,10 +120,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_d3i4n")
 
 [node name="Upgrade" type="Panel" parent="Upgrade"]
 visible = false
-offset_left = -286.0
-offset_top = 77.0
-offset_right = 290.0
-offset_bottom = 269.0
+scale = Vector2(0.32, 0.32)
 theme_override_styles/panel = SubResource("StyleBoxFlat_dwjm0")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Upgrade/Upgrade"]
@@ -170,6 +182,21 @@ offset_bottom = 160.0
 text = "1000"
 horizontal_alignment = 1
 
+[node name="ProgressBar" type="ProgressBar" parent="Upgrade"]
+offset_left = -67.0
+offset_top = -149.0
+offset_right = 62.0
+offset_bottom = -122.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ncn3i")
+theme_override_styles/fill = SubResource("StyleBoxFlat_depai")
+value = 50.0
+show_percentage = false
+script = SubResource("GDScript_qywug")
+
+[node name="Timer" type="Timer" parent="Upgrade/ProgressBar"]
+wait_time = 3.0
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
 [connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
+[connection signal="timeout" from="Upgrade/ProgressBar/Timer" to="." method="_on_timer_timeout"]
