@@ -6,12 +6,31 @@ var pathName
 var currTargets = []
 var curr
 
+var reload = 0
+var range = 400
+
+@onready var timer = get_node("Upgrade/ProgressBar/Timer")
+var startShooting = false
+
 func  _process(delta):
+	get_node("Upgrade/ProgressBar").scale = Vector2(0.32, 0.32)
+	get_node("Upgrade/ProgressBar").global_position = self.position + Vector2(-20, -40)
 	if is_instance_valid(curr):
 		self.look_at(curr.global_position)
+		if timer.is_stopped():
+			timer.start()
 	else:
 		for i in get_node("BulletContainer").get_child_count():
 			get_node("BulletContainer").get_child(i).queue_free()
+	update_powers()
+
+func Shoot():
+	var tempBullet = Bullet.instantiate()
+	tempBullet.pathName = pathName
+	tempBullet.bulletDamage = bulletDamage
+	get_node("BulletContainer").add_child(tempBullet)
+	tempBullet.global_position = $Aim.global_position
+
 
 func _on_tower_body_entered(body):
 	if "Soldier_a" in body.name:
@@ -33,14 +52,7 @@ func _on_tower_body_entered(body):
 		
 		curr = currTarget
 		pathName = currTarget.get_parent().name
-	
-		var tempBullet = Bullet.instantiate()
-		tempBullet.pathName = pathName
-		tempBullet.bulletDamage = bulletDamage
-		get_node("BulletContainer").add_child(tempBullet)
-		tempBullet.global_position = $Aim.global_position
-		
-		
+
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
 
@@ -52,8 +64,35 @@ func _on_input_event(viewport, event, shape_idx):
 			if towerPath.get_child(i).name != self.name:
 				towerPath.get_child(i).get_node("Upgrade/Upgrade").hide()
 		get_node("Upgrade/Upgrade").visible = !get_node("Upgrade/Upgrade").visible
+		get_node("Upgrade/Upgrade").scale = Vector2(0.32, 0.32)
 		get_node("Upgrade/Upgrade").global_position = self.position + Vector2(-95,25)
 
 
 func _on_timer_timeout():
-	pass # Replace with function body.
+	Shoot()
+
+func _on_range_pressed():
+	range += 30
+
+func _on_attack_speed_pressed():
+	if reload <= 2:
+		reload += 0.1
+	timer.wait_time = 3 - reload
+
+func _on_power_pressed():
+	bulletDamage += 1
+
+func update_powers():
+	get_node("Upgrade/Upgrade/HBoxContainer/Range/Label").text = str(range)
+	get_node("Upgrade/Upgrade/HBoxContainer/AttackSpeed/Label").text = str(3 - reload)
+	get_node("Upgrade/Upgrade/HBoxContainer/Power/Label").text = str(bulletDamage)
+	
+	get_node("Tower/CollisionShape2D").shape.radius = range
+
+
+func _on_range_mouse_entered():
+	get_node("Tower/CollisionShape2D").show()
+
+
+func _on_range_mouse_exited():
+	get_node("Tower/CollisionShape2D").hide()
