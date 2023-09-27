@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddlc555sq2hdj"
+path="res://.godot/imported/towerSquare_middleA.obj-bfb9a8e944386fc71edf8c97a3b6acfb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/towerSquare_middleA.obj-bfb9a8e944386fc71edf8c97a3b6acfb.mesh"]
+
+source_file="res://Models/OBJ format/towerSquare_middleA.obj"
+dest_files=["res://.godot/imported/towerSquare_middleA.obj-bfb9a8e944386fc71edf8c97a3b6acfb.mesh", "res://.godot/imported/towerSquare_middleA.obj-bfb9a8e944386fc71edf8c97a3b6acfb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

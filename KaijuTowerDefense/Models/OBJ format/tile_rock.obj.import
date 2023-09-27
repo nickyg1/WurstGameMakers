@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://boy2ppanxcou2"
+path="res://.godot/imported/tile_rock.obj-00bdeb36539adcda2ab18f0956020a2d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tile_rock.obj-00bdeb36539adcda2ab18f0956020a2d.mesh"]
+
+source_file="res://Models/OBJ format/tile_rock.obj"
+dest_files=["res://.godot/imported/tile_rock.obj-00bdeb36539adcda2ab18f0956020a2d.mesh", "res://.godot/imported/tile_rock.obj-00bdeb36539adcda2ab18f0956020a2d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

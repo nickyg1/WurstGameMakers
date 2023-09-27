@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0ytmbvgpjuol"
+path="res://.godot/imported/enemy_ufoPurpleWeapon.obj-20f08e68cf8426c871c496554222d585.mesh"
+
+[deps]
+
+files=["res://.godot/imported/enemy_ufoPurpleWeapon.obj-20f08e68cf8426c871c496554222d585.mesh"]
+
+source_file="res://Models/OBJ format/enemy_ufoPurpleWeapon.obj"
+dest_files=["res://.godot/imported/enemy_ufoPurpleWeapon.obj-20f08e68cf8426c871c496554222d585.mesh", "res://.godot/imported/enemy_ufoPurpleWeapon.obj-20f08e68cf8426c871c496554222d585.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

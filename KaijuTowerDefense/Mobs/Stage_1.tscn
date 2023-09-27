@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgpadgwv4r0q1"]
+
+[ext_resource type="PackedScene" uid="uid://dh4krl0f0taor" path="res://Mobs/UFO.tscn" id="1_kh8s6"]
+[ext_resource type="Script" path="res://Mobs/UFO.gd" id="2_glht5"]
+
+[sub_resource type="Curve3D" id="Curve3D_oia2q"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12.81, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Stage_1" type="Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42112, 1.05796, 4.4817)
+curve = SubResource("Curve3D_oia2q")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="UFO" parent="PathFollow3D" instance=ExtResource("1_kh8s6")]
+script = ExtResource("2_glht5")

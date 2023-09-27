@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh4krl0f0taor"]
+
+[ext_resource type="ArrayMesh" uid="uid://bdkujck8nbvxy" path="res://Models/OBJ format/enemy_ufoPurple.obj" id="1_vc1da"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u3l8g"]
+height = 0.466564
+radius = 0.521261
+
+[node name="UFO" type="CharacterBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_vc1da")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189312, 0)
+shape = SubResource("CylinderShape3D_u3l8g")

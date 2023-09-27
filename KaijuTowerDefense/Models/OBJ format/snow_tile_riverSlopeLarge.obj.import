@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brf1qssx212lb"
+path="res://.godot/imported/snow_tile_riverSlopeLarge.obj-5e1d12637b5f3e32143e7fa32dabeba7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/snow_tile_riverSlopeLarge.obj-5e1d12637b5f3e32143e7fa32dabeba7.mesh"]
+
+source_file="res://Models/OBJ format/snow_tile_riverSlopeLarge.obj"
+dest_files=["res://.godot/imported/snow_tile_riverSlopeLarge.obj-5e1d12637b5f3e32143e7fa32dabeba7.mesh", "res://.godot/imported/snow_tile_riverSlopeLarge.obj-5e1d12637b5f3e32143e7fa32dabeba7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

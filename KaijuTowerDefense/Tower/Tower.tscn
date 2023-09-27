@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://1d1t2xvebnv6"]
+
+[ext_resource type="Script" path="res://Tower/Tower.gd" id="1_nsl30"]
+[ext_resource type="ArrayMesh" uid="uid://dmyv41dak67ml" path="res://Models/OBJ format/weapon_cannon.obj" id="1_sxb1d"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jk1vv"]
+height = 0.506414
+radius = 0.297417
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ih1lh"]
+radius = 2.42918
+
+[node name="Tower" type="StaticBody3D"]
+script = ExtResource("1_nsl30")
+
+[node name="Aim" type="Marker3D" parent="."]
+
+[node name="WeaponCannon" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_sxb1d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160766, 0)
+shape = SubResource("CylinderShape3D_jk1vv")
+
+[node name="MobDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MobDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160766, 0)
+shape = SubResource("SphereShape3D_ih1lh")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]

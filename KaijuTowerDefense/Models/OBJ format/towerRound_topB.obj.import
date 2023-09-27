@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpqdqmpmmbiro"
+path="res://.godot/imported/towerRound_topB.obj-1ba618e42aa6e7753ef058305e09adf0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/towerRound_topB.obj-1ba618e42aa6e7753ef058305e09adf0.mesh"]
+
+source_file="res://Models/OBJ format/towerRound_topB.obj"
+dest_files=["res://.godot/imported/towerRound_topB.obj-1ba618e42aa6e7753ef058305e09adf0.mesh", "res://.godot/imported/towerRound_topB.obj-1ba618e42aa6e7753ef058305e09adf0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

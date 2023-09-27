@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gfl57csn6ykb"
+path="res://.godot/imported/detail_crystalLarge.obj-bf10ad56630c93bfb7bfa06a46bd3b18.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail_crystalLarge.obj-bf10ad56630c93bfb7bfa06a46bd3b18.mesh"]
+
+source_file="res://Models/OBJ format/detail_crystalLarge.obj"
+dest_files=["res://.godot/imported/detail_crystalLarge.obj-bf10ad56630c93bfb7bfa06a46bd3b18.mesh", "res://.godot/imported/detail_crystalLarge.obj-bf10ad56630c93bfb7bfa06a46bd3b18.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
