@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c45h5tjl5ydy2"]
+
+[ext_resource type="Texture2D" uid="uid://wcpd87w82hxg" path="res://icon.svg" id="1_yj1r8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(67, 65)
+texture = ExtResource("1_yj1r8")
+
+[node name="Button" type="Button" parent="CanvasLayer/Icon"]
+offset_left = -67.0
+offset_top = -65.0
+offset_right = 67.0
+offset_bottom = 67.0
